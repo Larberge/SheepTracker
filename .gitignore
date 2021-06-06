@@ -12,6 +12,7 @@ tech.txt
 gjøremål.txt
 optimaliseringsHuskeliste.txt
 app/env/*
+app/assets*
 # macOS
 .DS_Store
 coverage/\*\*/*
