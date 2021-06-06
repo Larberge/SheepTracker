@@ -1,0 +1,17 @@
+node_modules/**/*
+.expo/*
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+tech.txt
+gjøremål.txt
+optimaliseringsHuskeliste.txt
+app/env/*
+# macOS
+.DS_Store
+coverage/\*\*/*

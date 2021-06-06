@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "SheepTracker",
+    "slug": "SheepTracker",
+    "privacy": "unlisted",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./app/assets/sheep_256.png",
+    "splash": {
+      "image": "./app/assets/sheep_256.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#8FCFA7"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "UIBackgroundModes": ["location", "fetch"]
+      }
+    },
+    "android": {
+      "package": "com.masteroppgave.sheeptracker",
+      "versionCode": 1
+    },
+    "description": "Keep track of your sheep!",
+    "web": {
+      "favicon": "./app/assets/favicon.png"
+    }
+  }
+}
