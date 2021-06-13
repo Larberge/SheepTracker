@@ -12,7 +12,10 @@ tech.txt
 gjøremål.txt
 optimaliseringsHuskeliste.txt
 app/env/*
-coverage/lcov-report/SheepTracker/app/env/*
+HTML_representation/*
+!HTML_representation/lcov-report/SheepTracker/app/
+!HTML_representation/lcov-report/SheepTracker/App.js.html
+!HTML_representation/lcov-report/SheepTracker/indec.html
 app/assets*
 # macOS
 .DS_Store
