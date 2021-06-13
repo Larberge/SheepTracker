@@ -19,7 +19,7 @@ HTML_representation/lcov-report/*
 HTML_representation/lcov-report/SheepTracker/*
 !HTML_representation/lcov-report/SheepTracker/App/
 !HTML_representation/lcov-report/SheepTracker/App.js.html
-!HTML_representation/lcov-report/SheepTracker/indec.html
+!HTML_representation/lcov-report/SheepTracker/index.html
 app/assets*
 # macOS
 .DS_Store
