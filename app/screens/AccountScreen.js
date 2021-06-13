@@ -20,8 +20,8 @@ const AccountScreen = () => {
           source={require("../assets/sheep_128.png")}
         />
       </View>
-      <Apptext text={user.name} style={{fontSize: 32, color: appColors.gray700, fontWeight: "bold"}}/>
-      <Apptext text={user.email} style={{fontSize: 24, color: appColors.gray700, marginBottom: 32}}/>
+      <Apptext text={user.name} style={styles.nameText}/>
+      <Apptext text={user.email} style={styles.emailText}/>
       <AppButton buttonText="Sign out" onPress={() => logOut()}/>
     </View>
   );
@@ -52,6 +52,16 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.5,
     zIndex: 1,
   },
+  nameText: {
+    fontSize: 32, 
+    color: appColors.gray700, 
+    fontWeight: "bold"
+  },
+  emailText: {
+    fontSize: 24, 
+    color: appColors.gray700, 
+    marginBottom: 32
+  }
 });
 
 export default AccountScreen;

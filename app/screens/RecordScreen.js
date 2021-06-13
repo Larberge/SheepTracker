@@ -169,7 +169,7 @@ useEffect(() => {
           style: "destructive",
         },
         {
-          text: "Cancle",
+          text: "Cancel",
           onPress: () => setPaused(false),
         },
         {
@@ -260,7 +260,7 @@ useEffect(() => {
   };
 
   /**
- * Function that adds a marker to the marker array holding all markes of this follow-up trip
+ * Adds a marker to the marker array holding all markes of this follow-up trip
  * @param {object} pos Object holding position info of the new marker
  * @returns {void}
  */
@@ -292,7 +292,7 @@ useEffect(() => {
 
   /**
  * Function that places the marker
- * @returns {Void}
+ * @returns {void}
  */
   const confirmMarkerPlacement = () => {
     let updatedMarkers = markers;
@@ -305,7 +305,7 @@ useEffect(() => {
 
   /**
  * Function that cancels the marker placment and empties the relevant variables
- * @returns {Void}
+ * @returns {void}
  */
   const cancleMarkerPlacement = () => {
     let updatedMarkers = markers;
@@ -317,7 +317,7 @@ useEffect(() => {
 
   /**
  * Function that renders the markes on the map
- * @returns {Void}
+ * @returns {void}
  */
   const mapMarkers = () => {
     if(markers.length > 0){
@@ -337,7 +337,7 @@ useEffect(() => {
 
   /**
  * Function that renders the user's positon on the map
- * @returns {Void}
+ * @returns {void}
  */
   const mapPos = () => {
     if(userPos){
@@ -359,7 +359,7 @@ useEffect(() => {
 
   /**
  * Function that rrenders the walkpath on the map
- * @returns {Void}
+ * @returns {void}
  */
   const mapPath = () => {
     if(walkPath.length > 0){
@@ -374,7 +374,8 @@ useEffect(() => {
   /**
  * Function that updates a key-value pair of a marker
  * @param {object} Marker The markerobject to update
- * @param {String} key The key to hold the new value
+ * @param {variable} key The key to hold the new value
+ * @param {variable}
  * @returns {String} value the new value
  */
   const editMarker = (marker, key, value) => {
@@ -560,4 +561,3 @@ TaskManager.defineTask(LOCATION_TRACKING, async ({ data, error }) => {
     }
   }
 });
-

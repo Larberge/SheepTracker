@@ -31,7 +31,7 @@ const Dialog = ({
           <View style={styles.dialogButtonContainer}>
             <AppButton
               buttonStyle={styles.dialogButtonCancle}
-              buttonText={cancleText ? cancleText : "cancle"}
+              buttonText={cancleText ? cancleText : "cancel"}
               textSize={24}
               textColor={appColors.gray600}
               onPress={cancleAction}

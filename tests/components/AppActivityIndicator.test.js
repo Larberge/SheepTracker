@@ -1,11 +1,10 @@
 // import React from 'react';
+// import {View } from "react-native";
 // import renderer from 'react-test-renderer';
 
-// import AppButton from '../../app/components/appbutton';
-
-// describe('<AppButton />', () => {
+// describe('<AppActivityIndicator />', () => {
 //   it('has 1 child', () => {
-//     const tree = renderer.create(<AppButton />).toJSON();
+//     const tree = renderer.create(<View />).toJSON();
 //     expect(tree.children.length).toBe(1);
 //   });
 // });

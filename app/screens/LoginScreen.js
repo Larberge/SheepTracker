@@ -1,8 +1,6 @@
 import React, {useState }from "react";
 import { StyleSheet, View } from "react-native";
 import * as Yup from "yup";
-import { useNavigation } from "@react-navigation/native";
-import * as Crypto from 'expo-crypto';
 import * as WebBrowser from 'expo-web-browser';
 
 import AuthAPI from "../api/auth";
@@ -29,7 +27,6 @@ const LoginScreen = () => {
   const {logIn} = useAuth();
   const getPin = useApi(AuthAPI.getPin);
   const loginApi = useApi(AuthAPI.login);
-  const navigation = useNavigation();
   const [loginFailed, setLoginFailed] = useState(false)
   const [pinStatus, setPinStatus] = useState(false);
   const [enteredEmail, setEnteredEmail] = useState("");
@@ -38,7 +35,7 @@ const LoginScreen = () => {
 /**
  * Function that handles the login submit interaction
  * @param   {Integer} pin Set of integers the user is to be authenticated with
- * @return  {Void} 
+ * @return  {void} 
  */
   const handleSubmit = async ({pin}) => {
     const result = await loginApi.request(enteredEmail, pin);
@@ -49,11 +46,10 @@ const LoginScreen = () => {
     }
   }
 
-
 /**
  * Function that handles request pin interaction
  * @param   {String} email Email the user enters to recieve pin
- * @return  {Void} 
+ * @return  {void} 
  */
   const handleRequestPin = async ({email}) => {
     setPinStatus(true);
@@ -61,10 +57,9 @@ const LoginScreen = () => {
     await getPin.request(email);
   }
 
-
 /**
  * Function that handles the registration of a new useracconut
- * @return  {Void} 
+ * @return  {void} 
  */
   const registrateNewUserAsync = async () => {
     let result = await WebBrowser.openBrowserAsync(settings.registrationUrl);

@@ -7,7 +7,7 @@ import authStorage from "./storage";
 /**
  * Hook that provides all the authentication functionality throug login and logout functions
  */ 
-const useAuth = () => {
+export default useAuth = () => {
   const { user, setUser } = useContext(AuthContext);
 
 
@@ -29,10 +29,9 @@ const useAuth = () => {
     setUser(null);
     authStorage.removeToken();
   };
-
   return { user, logIn, logOut };
 };
 
-export default {
-  useAuth
-}
+// export default {
+//   useAuth
+// }

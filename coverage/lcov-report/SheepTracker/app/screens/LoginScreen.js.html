@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/25</span>
+                <span class='fraction'>0/26</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/25</span>
+                <span class='fraction'>0/26</span>
             </div>
         
             
@@ -217,7 +217,29 @@
 <a name='L158'></a><a href='#L158'>158</a>
 <a name='L159'></a><a href='#L159'>159</a>
 <a name='L160'></a><a href='#L160'>160</a>
-<a name='L161'></a><a href='#L161'>161</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -240,6 +262,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -247,6 +273,13 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -257,10 +290,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -399,7 +443,12 @@ const validationSchema = <span class="cstat-no" title="statement not covered" >Y
   email: Yup.string().required().email().label("Email"),
 });
 &nbsp;
-function <span class="fstat-no" title="function not covered" >LoginScreen(</span>) {
+/**
+ * Function that returns the login screen
+ * @return Screen Returns a screen component displaying the content of the login screen
+ */
+&nbsp;
+const LoginScreen = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
   const {logIn} = <span class="cstat-no" title="statement not covered" >useAuth();</span>
   const getPin = <span class="cstat-no" title="statement not covered" >useApi(AuthAPI.getPin);</span>
   const loginApi = <span class="cstat-no" title="statement not covered" >useApi(AuthAPI.login);</span>
@@ -408,6 +457,12 @@ function <span class="fstat-no" title="function not covered" >LoginScreen(</span
   const [pinStatus, setPinStatus] = <span class="cstat-no" title="statement not covered" >useState(false);</span>
   const [enteredEmail, setEnteredEmail] = <span class="cstat-no" title="statement not covered" >useState("");</span>
 &nbsp;
+&nbsp;
+/**
+ * Function that handles the login submit interaction
+ * @param   {Integer} pin Set of integers the user is to be authenticated with
+ * @return  {Void} 
+ */
   const handleSubmit = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >as</span>ync ({pin}) =&gt; {</span>
     const result = <span class="cstat-no" title="statement not covered" >await loginApi.request(enteredEmail, pin);</span>
 <span class="cstat-no" title="statement not covered" >    if(result.data){</span>
@@ -417,12 +472,23 @@ function <span class="fstat-no" title="function not covered" >LoginScreen(</span
     }
   }
 &nbsp;
+&nbsp;
+/**
+ * Function that handles request pin interaction
+ * @param   {String} email Email the user enters to recieve pin
+ * @return  {Void} 
+ */
   const handleRequestPin = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >as</span>ync ({email}) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    setPinStatus(true);</span>
 <span class="cstat-no" title="statement not covered" >    setEnteredEmail(email);</span>
 <span class="cstat-no" title="statement not covered" >    await getPin.request(email);</span>
   }
 &nbsp;
+&nbsp;
+/**
+ * Function that handles the registration of a new useracconut
+ * @return  {Void} 
+ */
   const registrateNewUserAsync = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
     let result = <span class="cstat-no" title="statement not covered" >await WebBrowser.openBrowserAsync(settings.registrationUrl);</span>
 <span class="cstat-no" title="statement not covered" >    setResult(result);</span>
@@ -544,7 +610,7 @@ export default LoginScreen;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jun 03 2021 20:03:38 GMT+0200 (Central European Summer Time)
+                at Sun Jun 06 2021 22:36:56 GMT+0200 (Central European Summer Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

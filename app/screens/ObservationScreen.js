@@ -34,7 +34,6 @@ import Icon from "../components/Icon";
 const ObservationScreen = ({ cancelAction, confirmAction, marker, editMarkerFunc, typeOfObservation }) => {
   const [observationType, setObservationType] = useState(typeOfObservation);
   const [disableButton, setDisableButton] = useState(true);
-  const [orientation, setOrientation] = useState();
   const [offset, setOffset] = useState(0);
   const [activeID, setactiveID] = useState(1);
   const [addComment, setAddComment] = useState(false);
@@ -176,17 +175,17 @@ const ObservationScreen = ({ cancelAction, confirmAction, marker, editMarkerFunc
           onScrollEndDrag={ (event) => editValue(event, cat, marker[cat.name])}
           bounces
           >
-          <View style={{flex: 1, justifyContent: "center", alignItems: "center"}}>
-            <AppButton iconName="add" iconSize={64} onPress={() => increase(cat.name, parseInt(marker[cat.name]))} buttonStyle={{backgroundColor: "green", width: "90%", flex: 1}}/>
-            <View style={{flexDirection: "row", alignItems: "center", width: "100%", justifyContent: "space-between", padding: 32}}>
+          <View style={styles.catMainContainer}>
+            <AppButton iconName="add" iconSize={64} onPress={() => increase(cat.name, parseInt(marker[cat.name]))} buttonStyle={styles.increaseButton}/>
+            <View style={styles.catMainInfoContainer}>
               <Icon MI={false} iconName={"gesture-swipe-vertical"} iconColor={appColors.primary} iconSize={48}/>
-              <View style={{alignItems: "center", justifyContent: "center", marginVertical: -32}}>
-                <AppText style={{color: appColors.gray700, fontSize: 42, marginBottom: -8, textTransform: "uppercase" }} text={cat.name == "sows" ? "Ewes" : cat.name} />
-                <AppText style={{color: appColors.gray700, fontSize: 64}} text={marker[cat.name]}/>
+              <View style={styles.catContainer}>
+                <AppText style={styles.catName} text={cat.name == "sows" ? "Ewes" : cat.name} />
+                <AppText style={styles.catValue} text={marker[cat.name]}/>
               </View>
               <Icon MI={false} iconName={"gesture-swipe-vertical"} iconColor={appColors.primary} iconSize={48}/>
             </View>
-            <AppButton iconName="remove" iconSize={64} onPress={() => decrease(cat.name, parseInt(marker[cat.name]))} buttonStyle={{backgroundColor: "tomato", width: "90%", flex: 1}}/>
+            <AppButton iconName="remove" iconSize={64} onPress={() => decrease(cat.name, parseInt(marker[cat.name]))} buttonStyle={styles.decreaseButton}/>
           </View>
         </ScrollView>
       </View>
@@ -200,9 +199,9 @@ const ObservationScreen = ({ cancelAction, confirmAction, marker, editMarkerFunc
   const renderNavDots = () => {
     return categories.map( cat => {
       if(activeID != cat.id){
-        return <View key={cat.id} style={{width: 15, minHeight: 15, borderRadius: 7.5, backgroundColor: appColors.gray300, marginHorizontal: 1}}/>
+        return <View key={cat.id} style={styles.navDot}/>
       }else{
-        return <View key={cat.id} style={{width: 20, height: 20, borderRadius: 10, backgroundColor: appColors.gray600, marginHorizontal: 2}}/>
+        return <View key={cat.id} style={styles.activeNavDot}/>
       }
     });
   }
@@ -315,8 +314,7 @@ const ObservationScreen = ({ cancelAction, confirmAction, marker, editMarkerFunc
   }
 
   return (
-  <Screen style={{backgroundColor: appColors.transparent}}>
-
+  <Screen style={styles.mainScreen}>
     {observationType == "Sheep" && <View style={styles.mainContainer}>
       <View style={{flex: 1, marginTop: 16}}>
         {!addComment && <ScrollView 
@@ -355,7 +353,7 @@ const ObservationScreen = ({ cancelAction, confirmAction, marker, editMarkerFunc
      
       <View style={styles.bottomContainer}>
         <AppButton
-          buttonText={"Cancle"}
+          buttonText={"Cancel"}
           textSize={20}
           textColor={appColors.gray600}
           buttonStyle={{
@@ -415,7 +413,7 @@ const ObservationScreen = ({ cancelAction, confirmAction, marker, editMarkerFunc
       </View>
       <View style={styles.bottomContainer}>
         <AppButton
-          buttonText={"Cancle"}
+          buttonText={"Cancel"}
           textSize={20}
           textColor={appColors.gray600}
           buttonStyle={{
@@ -508,6 +506,9 @@ const ObservationScreen = ({ cancelAction, confirmAction, marker, editMarkerFunc
 }
 
 const styles = StyleSheet.create({
+  mainScreen: {
+    backgroundColor: appColors.transparent
+  },
   bigButton: {
     backgroundColor: appColors.gray200,
     flex: 1,
@@ -584,6 +585,20 @@ const styles = StyleSheet.create({
     bottom: 0, 
     zIndex: -2
   },
+  navDot: {
+    width: 15, 
+    minHeight: 15, 
+    borderRadius: 7.5, 
+    backgroundColor: appColors.gray300, 
+    marginHorizontal: 1
+  },
+  activeNavDot: {
+    width: 20, 
+    height: 20, 
+    borderRadius: 10, 
+    backgroundColor: appColors.gray600, 
+    marginHorizontal: 2
+  },
   title: {
     marginTop: 16,
     fontSize: 24,
@@ -613,6 +628,44 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
   },
+  increaseButton: {
+    backgroundColor: "green",
+    width: "90%", 
+    flex: 1
+  },
+  decreaseButton: {
+    backgroundColor: "tomato", 
+    width: "90%", 
+    flex: 1
+  },
+  catName: {
+    color: appColors.gray700, 
+    fontSize: 42, 
+    marginBottom: -8, 
+    textTransform: "uppercase"
+  },
+  catValue: {
+    color: appColors.gray700,
+    fontSize: 64
+  },
+  catContainer: {
+    alignItems: "center", 
+    justifyContent: "center", 
+    marginVertical: -32
+  },
+  catMainInfoContainer: {
+    flexDirection: "row", 
+    alignItems: "center", 
+    width: "100%", 
+    justifyContent: "space-between", 
+    padding: 32
+  },
+  catMainContainer: {
+    flex: 1, 
+    justifyContent: "center", 
+    alignItems: "center"
+  }
 });
 
 export default ObservationScreen;
+

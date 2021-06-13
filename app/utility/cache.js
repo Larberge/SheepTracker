@@ -2,6 +2,12 @@ import AsyncStorage from "@react-native-community/async-storage";
 
 cacheKey = "reports"
 
+
+/**
+ * Returns data assosiated with the given cacheKey from the cache 
+ * @param {String} key Default set to "reports". Key of the data to return
+ * @returns {object}
+ */
 const get = async (key = cacheKey) => {
   try {
     const value = await AsyncStorage.getItem(key);
@@ -13,6 +19,12 @@ const get = async (key = cacheKey) => {
   }
 };
 
+
+/**
+ * Post the given data to cache
+ * @param {Object} data Data to post to cache
+ * @returns {void}
+ */
 const post = async (data) => {
   try {
     let dataToPost = await get(cacheKey);
@@ -27,12 +39,24 @@ const post = async (data) => {
   }
 };
 
+
+/**
+ * Deletes all data assosiated with the given key
+ * @param {String} objectKey Key of the data to delete
+ * @returns {void}
+ */
 const deleteByKey = async (objectKey) => {
   const cacheData = await get();
   const dataToKeep = cacheData.filter(d => d.externalID != objectKey);
   await AsyncStorage.setItem(cacheKey, JSON.stringify(dataToKeep));
 }
 
+
+/**
+ * Inserts the given data to the cache
+ * @param {object} dbData Data to be inserted in cache
+ * @returns {void}
+ */
 const insertFromDb = async (dbData) => {
   try {
     await AsyncStorage.setItem(cacheKey, JSON.stringify(dbData.slice(0,10)));
@@ -41,6 +65,10 @@ const insertFromDb = async (dbData) => {
   }
 }
 
+/**
+ * Function that returns data from cache that is not in DB
+ * @returns {Array || null}
+ */
 const syncWithDb = async () => {
   try {
     const cacheData = await get();
@@ -54,6 +82,10 @@ const syncWithDb = async () => {
   }
 }
 
+/**
+ * caches the the active walkpath of a trip currently being perfromed
+ * @returns {void}
+ */
 const activeWalkPathCacheKey = "walkpath"
 const cacheActiveWalkPath = async (data) => {
   try {
@@ -63,7 +95,12 @@ const cacheActiveWalkPath = async (data) => {
     
   }
 }
- 
+
+
+/**
+ * Returns the active walkpath of a trip currently being perfromed
+ * @returns {object || void}
+ */
 const getActiveWalkPathData = async () => {
   try {
     const dataInCache = await get(activeWalkPathCacheKey)
@@ -74,6 +111,11 @@ const getActiveWalkPathData = async () => {
   }
 }
 
+
+/**
+ * Removes the active walkpath of a trip currently being perfromed
+ * @returns {void}
+ */
 const clearActiveWalkPathData = async () => {
   try {
     await AsyncStorage.removeItem(activeWalkPathCacheKey);

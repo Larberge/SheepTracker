@@ -6,6 +6,12 @@ import RecordScreen from "../screens/RecordScreen.js";
 
 const Stack = createStackNavigator();
 
+
+/**
+ * The navigation component of the appliation.
+ * @component
+ * @returns {Stack.Navigator} Navigator component with all screens to navigate between.
+ */
 const AppNavigator = () => (
     <Stack.Navigator initialRouteName="Main">
         <Stack.Screen name="Main" component={HomeScreen} options={{ headerShown: false }}/>
