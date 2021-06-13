@@ -13,7 +13,11 @@ gjøremål.txt
 optimaliseringsHuskeliste.txt
 app/env/*
 HTML_representation/*
-!HTML_representation/lcov-report/SheepTracker/app/
+!HTML_representation/lcov-report
+HTML_representation/lcov-report/*
+!HTML_representation/lcov-report/SheepTracker
+HTML_representation/lcov-report/SheepTracker/*
+!HTML_representation/lcov-report/SheepTracker/App/
 !HTML_representation/lcov-report/SheepTracker/App.js.html
 !HTML_representation/lcov-report/SheepTracker/indec.html
 app/assets*
